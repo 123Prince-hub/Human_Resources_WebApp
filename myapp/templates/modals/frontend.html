@@ -1,0 +1,20 @@
+{% extends 'modals/baseModal.html' %}
+
+<!-- Modal ID -->
+{% block modal-id %} id="frontendModal" {% endblock modal-id %}
+
+<!-- Modal Title -->
+{% block modal-title %}<i class="fas fa-code"></i>&nbsp;&nbsp;Frontend Opportunities{% endblock modal-title %}
+
+<!-- Form Validation -->
+{% block validation %} onsubmit="return validateForm()" {% endblock validation %}
+
+<!-- =======================  INPUT ID  ======================== -->
+{% block id_name %}  id="name" {% endblock id_name %}
+{% block id_age %}  id="age" {% endblock id_age %}
+{% block id_email %} id="email" {% endblock id_email %}
+{% block id_phone %} id="phone" {% endblock id_phone %}
+{% block id_address %} id="address" {% endblock id_address %}
+{% block id_experience %} id="experience" {% endblock id_experience %}
+{% block id_skills %} id="skills" {% endblock id_skills %}
+{% block id_file %} id="file" {% endblock id_file %}

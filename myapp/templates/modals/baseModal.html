@@ -1,0 +1,77 @@
+<!-- Modal (Root) -->
+<div class="modal fade" {% block modal-id %}{% endblock modal-id %} tabindex="-1" aria-labelledby="defaultModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="defaultModalLabel">{% block modal-title %}{% endblock modal-title %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form action="" method="POST" {% block validation %}{% endblock validation %} enctype="multipart/form-data" autocomplete="on">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="input-group input-group-sm mb-2">
+                        <button class="side-label btn border-secondary bg-light">
+                            <i class="fas fa-user-alt"></i>
+                        </button>
+                        <input type="text" class="form-control name" {% block id_name %}{% endblock id_name %} name="name" placeholder="Full Name">
+                    </div>
+
+                    <div class="input-group input-group-sm mb-2">
+                        <button class="side-label btn border-secondary bg-light">
+                            <i class="fas fa-universal-access"></i>
+                        </button>
+                        <input type="text" class="form-control age" {% block id_age %}{% endblock id_age %} name="age" placeholder="Your Age">
+                    </div>
+
+                    <div class="input-group input-group-sm mb-2">
+                        <button class="side-label btn border-secondary bg-light">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <input type="text" class="form-control email" {% block id_email %}{% endblock id_email %}  name="email" placeholder="Your Email">
+                    </div>
+
+                    <div class="input-group input-group-sm mb-2">
+                        <button class="side-label btn border-secondary bg-light">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <input type="text" class="form-control phone" {% block id_phone %}{% endblock id_phone %} name="phone" placeholder="Your Phone">
+                    </div>
+
+                    <div class="input-group input-group-sm mb-2">
+                        <button class="side-label btn border-secondary bg-light">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                        <input type="text" class="form-control" {% block id_address %}{% endblock id_address %} name="address" placeholder="Your Address">
+                    </div>
+
+                    <div class="mb-2 mt-3">
+                        <textarea class="form-control" {% block id_experience %}{% endblock id_experience %} name="experience" rows="3"
+                            placeholder="Talk a little about your experience."></textarea>
+                    </div>
+
+                    <div class="mb-2 mt-3">
+                        <textarea class="form-control" {% block id_skills %}{% endblock id_skills %} name="skills" rows="3"
+                            placeholder="Talk a little about your skills."></textarea>
+                    </div>
+
+                    <hr class="hr-line">
+
+                    <div class="mb-3">
+                        <div class="mb-3" style="font-size: 14px;"><i
+                                class="fas fa-cloud-upload-alt"></i>&nbsp;&nbsp;Upload your resume</div>
+                        <input type="file" class="form-control form-control-sm" {% block id_file %}{% endblock id_file %} name="file"
+                            accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                        <div class="form-text" style="font-size: 12px;">* Allowed extensions: pdf - doc - docx</div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark btn-sm btn-cancel" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-secondary btn-sm btn-send">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
